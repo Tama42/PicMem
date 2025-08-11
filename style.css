@@ -1,6 +1,6 @@
 :root{
-    --board-width: 600px;
-    --board-height: 400px;
+    --board-width: 900px;
+    --board-height: 600px;
 
     --card-field-width: calc((var(--board-width) / 100) * 98);
     --card-field-heigth: calc((var(--board-height) / 100) * 98);
@@ -12,6 +12,15 @@
 *{
     margin: 0;
     padding: 0;
+}
+
+.card_inner img{
+    position: relative;
+    width: var(--card-width);
+    height: var(--card-heigth);
+    max-width: 100%;
+    max-height: auto;
+    display: flex;
 }
 
 #board{
@@ -42,7 +51,7 @@
     font-family: sans-serif;
     font-size: 5em;
     text-align: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .card_inner{
