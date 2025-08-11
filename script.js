@@ -72,7 +72,7 @@ function drawCards(size){
         cards.append(newC);
 
         const backDiv = newC.querySelector('.back');
-        backDiv.append(deck[i].value.cloneNode(true));
+        backDiv.innerHTML = deck[i].value;
 
         /*
         const newInner = newC.querySelector('.card_inner');
@@ -85,11 +85,14 @@ function drawCards(size){
 
 function deckCreate(deckName){
     return Array.from({length: 12}, (_,i) =>{
+        return `<img src='img/${deckName}/${i}.jpg' alt='pic'>`;
+    });
+    /*return Array.from({length: 12}, (_,i) =>{
         const img = document.createElement('img');
         img.src = `img/${deckName}/${i}.jpg`;
         img.alt = 'pic';
         return img;
-    });
+    });*/
 }
 
 draw.addEventListener('click', ()=>{
