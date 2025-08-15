@@ -1,9 +1,7 @@
-const card = document.querySelectorAll('.card_inner');
 const cards = document.getElementById('cards');
-
 const draw = document.getElementById('draw');
 
-//Pärchen erstellen
+//Decks
 const base = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 const deck01 = deckCreate('deck01');
 
@@ -32,54 +30,18 @@ function shuffle(arr){
     return arr;
 }
 
-
-/*
-card.forEach(c => 
-    c.addEventListener('click', ()=>
-        c.classList.toggle('rot')
-    )
-);
-
-function newCard(){
-    newC = document.createElement('div');
-    newC.classList.add('card');
-    newC.innerHTML = `<div class="card_inner">
-                        <div class="front">A</div>
-                        <div class="back">B</div>
-                    </div>`;
-
-    cards.append(newC);
-
-    const newInner = newC.querySelector('.card_inner');
-    newInner.addEventListener('click', ()=>{
-        newInner.classList.toggle('rot');
-    })
-}
-*/
 function drawCards(size){
     const deck = makeDeck(deck01);
     for(let i=0; i<size; i++){
-        
         const newC = document.createElement('div');
         newC.classList.add('card');
         newC.innerHTML = `<div class="card_inner">
                             <div class="front">${backSide}</div>
                             <div class="back"></div>
                         </div>`;
-        
-        
-
         cards.append(newC);
-
         const backDiv = newC.querySelector('.back');
         backDiv.innerHTML = deck[i].value;
-
-        /*
-        const newInner = newC.querySelector('.card_inner');
-        newInner.addEventListener('click', ()=>{
-            newInner.classList.toggle('rot');
-        });
-        */
     }
 }
 
@@ -87,12 +49,6 @@ function deckCreate(deckName){
     return Array.from({length: 12}, (_,i) =>{
         return `<img src='img/${deckName}/${i}.jpg' alt='pic'>`;
     });
-    /*return Array.from({length: 12}, (_,i) =>{
-        const img = document.createElement('img');
-        img.src = `img/${deckName}/${i}.jpg`;
-        img.alt = 'pic';
-        return img;
-    });*/
 }
 
 draw.addEventListener('click', ()=>{

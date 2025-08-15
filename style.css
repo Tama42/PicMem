@@ -63,9 +63,6 @@
 
 }
 
-
-
-
 .front,
 .back{
     width: 100%;
@@ -74,6 +71,7 @@
     backface-visibility: hidden;
     
 }
+
 .front{
     background-color: blue;
 }
