@@ -82,7 +82,7 @@
     transform: rotateY(180deg);
 }
 
-.rot{
+.card_inner.rot{
     transform: rotateY(180deg);
 }
 
