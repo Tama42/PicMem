@@ -13,6 +13,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: rgb(74, 74, 255);
+}
 
 .card_inner img{
     position: relative;
@@ -26,7 +29,7 @@
 
 #board{
     
-    background-color: blueviolet;
+    background-color: rgb(61, 165, 197);
     width: var(--board-width);
     height: var(--board-height);
     
@@ -94,15 +97,16 @@ h1{
 #top{
     display: flex;
     flex-direction: row;
-    border: 2px solid black;
-    width: var(--board-width);
-    margin: 1px;
+    border: 2px solid rgb(8, 20, 128);
+    width: var(--card-field-width);
+    margin: 2px 1%;
     font-family: sans-serif;
     text-align: center;
+    background-color: blue;
 }
 
 .topLabel{
-    border:1px solid black;
+    border:1px solid rgb(8, 20, 128);
     height: calc(100% - 4px);
     margin: 1px;
     font-size: 1.5em;
@@ -111,10 +115,12 @@ h1{
 
 #trysCount,
 #matchesCount{
-    border: 1px solid black;
+    border: 1px solid rgb(8, 20, 128);
+    color:rgb(119, 133, 255);
     width: 120px;
-    font-size: 1.5 em;
-    font-weight: bold
+    font-size: 25px;
+    font-weight: bold;
+    margin: 1px;
 }
 
 #matches,
@@ -122,4 +128,5 @@ h1{
     display: flex;
     flex-direction: row;
     padding: 0 auto;
+    
 }

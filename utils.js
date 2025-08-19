@@ -50,7 +50,7 @@ function counterView(mode){
         trys += 1;
         matches += 1;
         tC.innerText = trys;
-        mC.innerText = matches;
+        mC.innerText = `${matches} / 12`;
     }
     else if(mode===2){
         trys += 1;

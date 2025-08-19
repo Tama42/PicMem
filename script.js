@@ -59,11 +59,16 @@ function deckCreate(deckName){
 function fieldReset(){
     const askReset = "Spielfeld wirklich zurück setzen? Der Aktuelle Spielstand wird gelöscht";
     const cards = document.querySelector('#cards');
+    const tC = document.getElementById('trysCount');
+    const mC = document.getElementById('matchesCount');
+
     if(cards.children.length > 0){
         if (confirm(askReset)){
             draw.addEventListener('click', ()=>{
             drawCards(24);
             }, {once:true});
+            tC.innerText = 0;
+            mC.innerText = '0 / 12'
             return cards.innerHTML = "";
         }
         else return;
