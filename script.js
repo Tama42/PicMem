@@ -2,6 +2,7 @@ const cards = document.getElementById('cards');
 const draw = document.getElementById('draw');
 const reset = document.getElementById('reset');
 
+
 //Decks
 const base = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 const deck01 = deckCreate('deck01');
@@ -9,12 +10,6 @@ const deck01 = deckCreate('deck01');
 
 const backSide = '<img src="img/bs/magic_k.jpg" alt="backside">';
 
-// cards.addEventListener('click', e => {
-//   const inner = e.target.closest('.card_inner');
-//   console.log('inner=', inner);
-//   if (!inner) return;
-//   inner.classList.toggle('rot');
-// });
 cards.addEventListener('click', e =>{
     const inner = e.target.closest('.card_inner');
 console.log('click?', { target:e.target, inner });
@@ -51,7 +46,7 @@ function drawCards(size){
         const backDiv = newC.querySelector('.back');
         const inner = newC.querySelector('.card_inner');
         backDiv.innerHTML = deck[i].value;
-        inner.dataset.value = deck[i].valueKey;
+        inner.dataset.value = deck[i].value;
     }
 }
 

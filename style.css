@@ -87,4 +87,39 @@
     transform: rotateY(180deg);
 }
 
+h1{
+    margin: 1px 50px 1px 2px;
+}
 
+#top{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    width: var(--board-width);
+    margin: 1px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.topLabel{
+    border:1px solid black;
+    height: calc(100% - 4px);
+    margin: 1px;
+    font-size: 1.5em;
+    width: 120px;
+}
+
+#trysCount,
+#matchesCount{
+    border: 1px solid black;
+    width: 120px;
+    font-size: 1.5 em;
+    font-weight: bold
+}
+
+#matches,
+#trys{
+    display: flex;
+    flex-direction: row;
+    padding: 0 auto;
+}
