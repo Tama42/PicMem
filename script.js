@@ -9,12 +9,18 @@ const deck01 = deckCreate('deck01');
 
 const backSide = '<img src="img/bs/magic_k.jpg" alt="backside">';
 
+// cards.addEventListener('click', e => {
+//   const inner = e.target.closest('.card_inner');
+//   console.log('inner=', inner);
+//   if (!inner) return;
+//   inner.classList.toggle('rot');
+// });
 cards.addEventListener('click', e =>{
-    const cardInner = e.target.closest('.card_inner');
-    if(cardInner && cards.contains(cardInner)){
-        cardInner.classList.toggle('rot');
-    }
-})
+    const inner = e.target.closest('.card_inner');
+console.log('click?', { target:e.target, inner });
+    if(!inner || !cards.contains(inner)) return;
+    onCardClick(inner);
+});
 
 function makeDeck(items){
     return shuffle([...items, ...items].map((val, i) => ({
@@ -43,7 +49,9 @@ function drawCards(size){
                         </div>`;
         cards.append(newC);
         const backDiv = newC.querySelector('.back');
+        const inner = newC.querySelector('.card_inner');
         backDiv.innerHTML = deck[i].value;
+        inner.dataset.value = deck[i].valueKey;
     }
 }
 
@@ -72,3 +80,4 @@ draw.addEventListener('click', ()=>{
 }, {once:true});
 
 reset.addEventListener('click', fieldReset);
+

@@ -3,10 +3,10 @@
     --board-height: 600px;
 
     --card-field-width: calc((var(--board-width) / 100) * 98);
-    --card-field-heigth: calc((var(--board-height) / 100) * 98);
+    --card-field-height: calc((var(--board-height) / 100) * 98);
     
     --card-width: calc(((var(--board-width) - 10px) - (calc(var(--board-height) - var(--card-field-heigth)))) / 6);
-    --card-height: calc(((var(--board-height) - 10px) - (calc(var(--board-height) - var(--card-field-heigth)))) / 4);
+    --card-height: calc(((var(--board-height) - 10px) - (calc(var(--board-height) - var(--card-field-height)))) / 4);
 }
 
 *{
@@ -17,10 +17,11 @@
 .card_inner img{
     position: relative;
     width: var(--card-width);
-    height: var(--card-heigth);
+    height: var(--card-height);
     max-width: 100%;
-    max-height: auto;
-    display: flex;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 #board{
@@ -85,6 +86,5 @@
 .card_inner.rot{
     transform: rotateY(180deg);
 }
-
 
 
